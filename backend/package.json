@@ -1,0 +1,13 @@
+{
+  "name": "@voice-companion/backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.7.0",
+    "ws": "^8.22.0"
+  }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Speech settings — Voice Companion</title></head>
+<body>
+<main class="settings-shell">
+  <header class="settings-header"><span class="settings-brand">Voice Companion</span><h1>Speech settings</h1><p>Choose how you speak and how the companion replies.</p></header>
+  <section class="settings-card" aria-labelledby="input-heading">
+    <div class="section-heading"><span class="step-number">01</span><div><h2 id="input-heading">Speech input</h2><p>Changes apply to your next recording.</p></div></div>
+    <label for="provider">Recognition provider</label>
+    <select id="provider"><option value="chrome">Chrome speech recognition</option><option value="meta">Meta STT</option></select>
+    <p id="provider-help" class="field-help">Chrome may send audio to Google. The final text goes to your guidance backend.</p>
+    <p id="provider-status" class="status" role="status">Checking speech settings…</p>
+    <details id="meta-setup" hidden><summary>Set up Meta STT</summary><p>Set <code>SERVER_STT_PROVIDER=meta</code> and provide <code>MODEL_API_KEY</code> in the Modal backend configuration. Then deploy the backend. Keep the key on the server.</p><p>You can switch providers here without rebuilding the extension.</p></details>
+    <label for="language">Recognition language</label>
+    <select id="language"><option value="en-IN">English (India)</option><option value="en-US">English (US)</option><option value="hi-IN">Hindi</option></select>
+  </section>
+  <section class="settings-card" aria-labelledby="microphone-heading">
+    <div class="section-heading"><span class="step-number">02</span><div><h2 id="microphone-heading">Microphone access</h2><p>Grant access once for voice input.</p></div></div>
+    <button id="allow" class="secondary-button" type="button">Allow microphone</button>
+    <p id="status" class="status" role="status"></p><p id="recognition-support" class="field-help"></p>
+  </section>
+  <section class="settings-card" aria-labelledby="output-heading">
+    <div class="section-heading"><span class="step-number">03</span><div><h2 id="output-heading">Spoken replies</h2><p>Keep a fixed Chrome voice for each reply language.</p></div></div>
+    <div class="voice-fields"><div><label for="english-voice">English voice</label><select id="english-voice"></select></div><div><label for="hindi-voice">Hindi voice</label><select id="hindi-voice"></select></div></div>
+  </section>
+  <footer class="settings-footer"><p id="settings-status" class="status" role="status">Provider changes save immediately.</p><button id="save" type="button">Save voice settings</button></footer>
+</main>
+<script type="module" src="./main.ts"></script>
+</body></html>

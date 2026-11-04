@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.wxt/
+.output/
+.DS_Store
+
+
+# Modal CLI environment (not part of the container image).
+backend/.venv-modal/
+__pycache__/

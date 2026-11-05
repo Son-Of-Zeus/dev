@@ -35,7 +35,7 @@ describe('Companion accessibility', () => {
     const surface = host.querySelector('[role="region"]') as HTMLElement;
     const button = host.querySelector('.companion-mic') as HTMLButtonElement;
     const status = host.querySelector(`#${COMPANION_STATUS_ID}`) as HTMLElement;
-    expect(surface.getAttribute('aria-label')).toBe('Voice companion');
+    expect(surface.getAttribute('aria-label')).toBe('Dev - Voice Companion');
     expect(surface.getAttribute('aria-busy')).toBe('false');
     expect(button.getAttribute('aria-describedby')).toBe(COMPANION_STATUS_ID);
     expect(status.getAttribute('role')).toBe('status');

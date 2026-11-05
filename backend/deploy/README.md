@@ -56,7 +56,7 @@ WXT_STT_PROVIDER=chrome
 npm run build
 ```
 
-Reload Voice Companion in `chrome://extensions`. For a first installation, load
+Reload Dev - Voice Companion in `chrome://extensions`. For a first installation, load
 `apps/extension/.output/chrome-mv3` as an unpacked extension. Verify its ID and
 update the origin allowlist if needed. Open the extension's Options to choose
 recognition language and fixed English/Hindi voices.

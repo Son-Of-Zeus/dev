@@ -1,4 +1,4 @@
-# Voice Companion
+# Dev - Voice Companion
 
 A general Chrome Manifest V3 extension for voice and visual website guidance.
 The user performs every website action. The companion scans, highlights, scrolls,

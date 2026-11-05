@@ -52,7 +52,7 @@ export function installBackground(api = browser) {
       const result = await serial(tabId, async () => {
         const origin = webOrigin(tab.url);
         if (!origin) {
-          await api.action.setTitle({ tabId, title: 'Voice Companion cannot access this page.' });
+          await api.action.setTitle({ tabId, title: 'Dev - Voice Companion cannot access this page.' });
           return { action: 'none' as const };
         }
         const existing = await read(tabId);

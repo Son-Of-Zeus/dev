@@ -56,7 +56,7 @@ export default function Companion({ store }: { store: CompanionUiStore }) {
     <section role="region" className={[
       'companion-surface', `companion-surface--${snapshot.state}`,
       targetSide ? `companion-surface--target-${targetSide}` : 'companion-surface--docked',
-    ].join(' ')} aria-label="Voice companion" aria-busy={isBusy} data-companion-state={snapshot.state}
+    ].join(' ')} aria-label="Dev - Voice Companion" aria-busy={isBusy} data-companion-state={snapshot.state}
       data-companion-busy={isBusy} data-companion-latency={snapshot.latencyNotice ? 'slow' : 'normal'}>
       {position && <button className="companion-button" type="button" disabled={snapshot.providerPending} aria-label="Ask about the highlighted control"
         onClick={() => store.toggleListening()} style={{ left: `${position.left}px`, top: `${position.top}px` }}>
@@ -74,7 +74,7 @@ export default function Companion({ store }: { store: CompanionUiStore }) {
               aria-live={snapshot.state === 'error' ? 'assertive' : 'polite'} aria-atomic="true">{statusLabel}</span>
             <span className="companion-provider-label"><span className="companion-status-dot" />{providerLabel}</span>
           </div>
-          <button type="button" className="companion-expand-button" aria-label={expanded ? 'Collapse voice companion' : 'Expand voice companion'}
+          <button type="button" className="companion-expand-button" aria-label={expanded ? 'Collapse Dev - Voice Companion' : 'Expand Dev - Voice Companion'}
             aria-expanded={expanded} aria-controls="voice-companion-body" onClick={() => setExpanded(!expanded)}><Icon name="chevron" /></button>
         </div>
         <div className="companion-expand" aria-hidden={!expanded} inert={!expanded}>

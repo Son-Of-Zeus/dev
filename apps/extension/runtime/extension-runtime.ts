@@ -132,11 +132,11 @@ function toDebugRect(rect: DOMRect): ExtensionDebugRect {
 }
 
 function defaultDebugLogger(event: ExtensionDebugEvent): void {
-  console.debug('[Voice Companion]', event);
+  console.debug('[Dev - Voice Companion]', event);
 }
 
 function defaultLatencyLogger(metric: LatencyMetric): void {
-  console.log('[Voice Companion latency]', {
+  console.log('[Dev - Voice Companion latency]', {
     stage: LATENCY_STAGE_LABELS[metric.stage],
     durationMs: metric.durationMs,
     ...(metric.museCalls === undefined ? {} : { museCalls: metric.museCalls, escalationReason: metric.escalationReason }),

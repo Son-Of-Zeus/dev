@@ -39,5 +39,5 @@ export function reportRejectedPlan(value, error, { attempt, committed, onRejecte
   const details = { event: 'muse-plan-rejected', attempt, committed,
     failure: publicModelFailure(new ModelFailure('PLANNER_INVALID_RESPONSE', 'Muse', error)),
     response: value === undefined ? { parsed: false } : summarizePlanResponse(value) };
-  (onRejectedPlan ?? ((report) => console.warn('[Voice Companion Muse diagnostic]', JSON.stringify(report))))(details);
+  (onRejectedPlan ?? ((report) => console.warn('[Dev - Voice Companion Muse diagnostic]', JSON.stringify(report))))(details);
 }

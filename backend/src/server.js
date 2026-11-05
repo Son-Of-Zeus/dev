@@ -84,7 +84,7 @@ export function createBackendRequestHandler(options = {}) {
       if (response.destroyed) return;
       const failure = publicModelFailure(error);
       if (inputValidated && !(error instanceof MissingTargetError)) {
-        const report = options.onFailure ?? ((details) => console.warn('[Voice Companion reasoning]', details));
+        const report = options.onFailure ?? ((details) => console.warn('[Dev - Voice Companion reasoning]', details));
         report(failure);
       }
       if (streaming && response.headersSent) {
@@ -127,7 +127,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const app = createBackendServer();
   const start = async () => {
     const address = await app.listen(Number(process.env.PORT ?? 8787), process.env.HOST ?? '127.0.0.1');
-    console.log(`Voice Companion backend: http://${address.address}:${address.port} (STT: ${process.env.SERVER_STT_PROVIDER ?? 'none'})`);
+    console.log(`Dev - Voice Companion backend: http://${address.address}:${address.port} (STT: ${process.env.SERVER_STT_PROVIDER ?? 'none'})`);
   };
   start().catch(async (error) => {
     console.error(error instanceof Error ? error.message : 'Backend startup failed.');
